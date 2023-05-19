@@ -4,7 +4,7 @@ export class Pessoa {
     _peso;
     _altura;
     _imc;
-  
+    _classificacao
     static totalPessoas = 0;
   
     constructor(nome, idade, peso, altura) {
@@ -12,13 +12,16 @@ export class Pessoa {
       this._idade = idade;
       this._peso = peso;
       this._altura = altura;
-      this._imc = this._peso / (this._altura * this._altura);
-      Pessoa.totalPessoas += 1;
+      this._imc = (this.peso / (this.altura * this.altura))
+
+      Pessoa.totalPessoas += 1; //increments(adds one to)
+      this._classificacao = this.classificaImc()
+
     }
   
     //set imc
     calculaImc() {
-      return (this._peso / (this._altura * this._altura)).toFixed(2);
+      return this.imc
     }
   
     get nome() {
