@@ -1,85 +1,84 @@
-export class Pessoa {
-    _nome;
-    _idade;
-    _peso;
-    _altura;
-    _imc;
-    _classificacao
-    static totalPessoas = 0;
-  
-    constructor(nome, idade, peso, altura) {
-      this._nome = nome;
-      this._idade = idade;
-      this._peso = peso;
-      this._altura = altura;
-      this._imc = (this.peso / (this.altura * this.altura))
+export class Person {
+  _name;
+  _age;
+  _weight;
+  _height;
+  _bmi;
+  _classification;
+  static peopleTotal = 0;
+  new;
+  constructor(name, age, weight, height) {
+    this._name = name;
+    this._age = age;
+    this._weight = weight;
+    this._height = height;
+    this._bmi = this.weight / (this.height * this.height);
 
-      Pessoa.totalPessoas += 1; //increments(adds one to)
-      this._classificacao = this.classificaImc()
+    Person.peopleTotal += 1; //increments(adds one to)
+    this._classification = this.classificatebmi();
+  }
 
+  //set bmi
+  calculateBmi() {
+    return this.bmi;
+  }
+
+  get name() {
+    return this._name;
+  }
+
+  get age() {
+    return this._age;
+  }
+
+  get weight() {
+    return this._weight;
+  }
+  get height() {
+    return this._height;
+  }
+  get bmi() {
+    return this._bmi;
+  }
+  get peopleTotal() {
+    return Person.peopleTotal;
+  }
+
+  set name(newname) {
+    this._name = newname;
+  }
+
+  set age(newage) {
+    this._age = newage;
+  }
+
+  set weight(newweight) {
+    this._weight = newweight;
+  }
+  set height(newheight) {
+    return (this._height = newheight);
+  }
+
+  classificatebmi() {
+    //pega o bmi
+    let bmiValue = this.bmi.toFixed(2);
+    let classification = "";
+
+    if (bmiValue < 18.5) {
+      classification = "Underweight";
+    } else if (bmiValue <= 24.9) {
+      classification = "Healthy Weight";
+    } else if (bmiValue <= 29.9) {
+      classification = "Overweight";
+    } else if (bmiValue <= 34.9) {
+      classification = "Obesage grau I";
+    } else if (bmiValue <= 39.9) {
+      classification = "Obsesage grau II";
+    } else if (bmiValue >= 40) {
+      classification = "Obsesage grau III ou Mórbida";
+    } else {
+      classification = "weight inválido";
     }
-  
-    //set imc
-    calculaImc() {
-      return this.imc
-    }
-  
-    get nome() {
-      return this._nome;
-    }
-  
-    get idade() {
-      return this._idade;
-    }
-  
-    get peso() {
-      return this._peso;
-    }
-    get altura() {
-      return this._altura;
-    }
-    get imc() {
-      return this._imc;
-    }
-    get totalPessoas() {
-      return Pessoa.totalPessoas;
-    }
-  
-    set nome(novoNome) {
-      this._nome = novoNome;
-    }
-  
-    set idade(novaIdade) {
-      this._idade = novaIdade;
-    }
-  
-    set peso(novoPeso) {
-      this._peso = novoPeso;
-    }
-    set altura(novaAltura) {
-      return (this._altura = novaAltura);
-    }
-  
-    classificaImc() {
-      //pega o Imc
-      let valordoImc = (this.imc).toFixed(2);
-      let classificacao = "";
-  
-      if (valordoImc < 18.5) {
-        classificacao = "Abaixo do peso";
-      } else if (valordoImc <= 24.9) {
-        classificacao = "Peso normal";
-      } else if (valordoImc <= 29.9) {
-        classificacao = "Sobrepeso";
-      } else if (valordoImc <= 34.9) {
-        classificacao = "Obesidade grau I";
-      } else if (valordoImc <= 39.9) {
-        classificacao = "Obsesidade grau II";
-      } else if (valordoImc >= 40) {
-        classificacao = "Obsesidade grau III ou Mórbida";
-      } else {
-        classificacao = "Peso inválido";
-      }
-      return classificacao;
-    }
-  } //fim da class Pessoa
+    return classification;
+  }
+} //fim da class Person
