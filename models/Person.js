@@ -6,7 +6,9 @@ export class Person {
   _bmi;
   _classification;
   static peopleTotal = 0;
+
   new;
+
   constructor(name, age, weight, height) {
     this._name = name;
     this._age = age;
@@ -15,10 +17,10 @@ export class Person {
     this._bmi = this.weight / (this.height * this.height);
 
     Person.peopleTotal += 1; //increments(adds one to)
-    this._classification = this.classificatebmi();
+    this._classification = this.classificateBmi();
   }
 
-  //set bmi
+  //get bmi
   calculateBmi() {
     return this.bmi;
   }
@@ -59,7 +61,7 @@ export class Person {
     return (this._height = newheight);
   }
 
-  classificatebmi() {
+  classificateBmi() {
     //pega o bmi
     let bmiValue = this.bmi.toFixed(2);
     let classification = "";

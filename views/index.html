@@ -1,13 +1,162 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script type="module" src="main.js" defer></script>
-</head>
-<body>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="images/favicon.png" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Object Oriented Programming in JavaScript</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <main class="main-screen">
+      <section id="contents">
+        <h1>BMI Calculator</h1>
+        <form action="" method="post" id="form">
+          <div id="messages"></div>
 
-</body>
-</html> 
+          <div class="form-group">
+            <label for="idPerson">ID</label>
+            <input
+              type="number"
+              name="idPerson"
+              id="idPerson"
+              placeholder="ID"
+              
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="name">Name <span class="details">*</span> </label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="name"
+              autofocus
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="age">Idade <span class="detailsxxxx   x   xx'">*</span> </label>
+            <input
+              type="number"
+              name=""
+              id="age"
+              min="1"
+              max="120"
+              step="1"
+              placeholder="Idade"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="weight">Peso <span class="detailsxxxx x   xx'">*</span></label>
+            <input
+              type="number"
+              name="weight"
+              id="weight"
+              min="1.0"
+              max="600.0"
+              step="0.1"
+              placeholder="Peso"
+              required
+            />
+            <!-- 1kg a 597 kg -->
+          </div>
+
+          <div class="form-group">
+            <label for="height">Altura <span class="detailsxxxx x   xx'">*</span></label>
+            <input
+              type="number"
+              name="height"
+              id="height"
+              min="0.30"
+              max="3.00"
+              step="0.01"
+              placeholder="Altura"
+              required
+            />
+            <!-- 0.47 metros a 3 metros -->
+          </div>
+
+          <div class="form-group">
+            <button
+              type="submit"
+              id="btnCalculate"
+              class="btn"
+              name="btnCalculate"
+            >
+              Calculate
+            </button>
+          </div>
+        </form>
+
+        <!-- JANELA MODAL -->
+        <div class="modal" id="modal">
+          <div class="modal-content">
+            <header class="modal-header">
+              <h2 id="title"></h2>
+              <span class="modal-close" id="modalClose">&#10006;</span>
+            </header>
+            <div id="messageModal"></div>
+            <footer class="modal-footer" id="botoesModal">
+              <button id="yes" class="btn btn-edit">Yes</button>
+              <button id="no" class="btn btn-del">No</button>
+            </footer>
+          </div>
+        </div>
+        <!-- FIM JANELA MODAL -->
+
+        <!-- editar e apagar -->
+        <div class="formDeleteEdit">
+          <h2>Type your ID to delete or to Edit the Record</h2>
+          <form method="POST" id="formDeleteEdit">
+            <div class="column2">
+              <div class="form-group">
+                <button
+                  type="submit"
+                  id="btnDelete"
+                  class="btn btn-del"
+                  name="btnDelete"
+                >
+                  Delete
+                </button>
+              </div>
+
+              <div class="form-group">
+                <input
+                  type="number"
+                  name="id"
+                  id="id"
+                  min="0"
+                  max="999"
+                  step="1"
+                  placeholder="ID"
+                />
+              </div>
+
+              <div class="form-group">
+                <button
+                  type="submit"
+                  id="btnEdit"
+                  class="btn btn-edit"
+                  name="btnEdit"
+                >
+                  Edit
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <!-- view -->
+        <div id="data">
+          <!-- table -->
+        </div>
+      </section>
+    </main>
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
