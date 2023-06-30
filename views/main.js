@@ -23,11 +23,11 @@ form.addEventListener('submit', (event) => {
 })
 
 ////// form formApagar
-const formApagarEditar = document.querySelector('#formDeleteEdit')
-const btnApagar = document.querySelector('#btnDelete')
-const btnEditar = document.querySelector('#btnEdit')
+const formDeleteEdit = document.querySelector('#formDeleteEdit')
+const btnDelete = document.querySelector('#btnDelete')
+const btnEdit = document.querySelector('#btnEdit')
 
-formApagarEditar.addEventListener('submit', (event) => {
+formDeleteEdit.addEventListener('submit', (event) => {
     event.preventDefault()
 })
 
@@ -56,7 +56,7 @@ btnDelete.addEventListener('click', () => {
 
 })
 
-btnEditar.addEventListener('click', () => {
+btnEdit.addEventListener('click', () => {
     //console.log('Edit')
 
     // Scroll the page up
@@ -86,6 +86,6 @@ btnEditar.addEventListener('click', () => {
 
 })
 
-////// form formApagar
+////// form formDelete
 
 ModalHelper.closeWindow()   

@@ -20,7 +20,7 @@ export class PersonController{
         this._inputHeight = document.querySelector('#height')
 
         // Repository
-        this._peopleRepository = new PessoasRepository()
+        this._peopleRepository = new PeopleRepository()
         //console.log(this._peopleRepository)
         let list = this._peopleRepository.ler()
         console.log(list)
