@@ -5,7 +5,7 @@
     <link rel="icon" href="images/favicon.png" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Object Oriented Programming in JavaScript</title>
+    <title>Body Mass Index (based on OOP)</title>
     <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body>
@@ -13,7 +13,7 @@
       <section id="contents">
         <h1>BMI Calculator</h1>
         <form action="" method="post" id="form">
-          <div id="messages"></div>
+          <div id="message"></div>
 
           <div class="form-group">
             <label for="idPerson">ID</label>
@@ -22,6 +22,7 @@
               name="idPerson"
               id="idPerson"
               placeholder="ID"
+              disabled
               
             />
           </div>
@@ -39,7 +40,7 @@
           </div>
 
           <div class="form-group">
-            <label for="age">Idade <span class="details">*</span> </label>
+            <label for="age">Age <span class="details">*</span> </label>
             <input
               type="number"
               name=""
@@ -47,13 +48,13 @@
               min="1"
               max="120"
               step="1"
-              placeholder="Idade"
+              placeholder="age"
               required
             />
           </div>
 
           <div class="form-group">
-            <label for="weight">Peso <span class="details">*</span></label>
+            <label for="weight">Weight <span class="details">*</span></label>
             <input
               type="number"
               name="weight"
@@ -61,14 +62,14 @@
               min="1.0"
               max="600.0"
               step="0.1"
-              placeholder="Peso"
+              placeholder="weight"
               required
             />
             <!-- 1kg a 597 kg -->
           </div>
 
           <div class="form-group">
-            <label for="height">Altura <span class="details">*</span></label>
+            <label for="height">Height <span class="details">*</span></label>
             <input
               type="number"
               name="height"
@@ -76,7 +77,7 @@
               min="0.30"
               max="3.00"
               step="0.01"
-              placeholder="Altura"
+              placeholder="height"
               required
             />
             <!-- 0.47 metros a 3 metros -->
@@ -94,7 +95,7 @@
           </div>
         </form>
 
-        <!-- JANELA MODAL -->
+        <!-- MODAL WINDOW -->
         <div class="modal" id="modal">
           <div class="modal-content">
             <header class="modal-header">
@@ -108,9 +109,9 @@
             </footer>
           </div>
         </div>
-        <!-- FIM JANELA MODAL -->
+        <!-- END OF MODAL WINDOW -->
 
-        <!-- editar e apagar -->
+        <!-- edit and delete -->
         <div class="formDeleteEdit">
           <h2>Type your ID to delete or to Edit the Record</h2>
           <form method="POST" id="formDeleteEdit">
@@ -151,9 +152,13 @@
             </div>
           </form>
         </div>
+
         <!-- view -->
+
         <div id="data">
+
           <!-- table -->
+          
         </div>
       </section>
     </main>

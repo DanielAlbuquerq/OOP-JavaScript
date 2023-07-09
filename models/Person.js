@@ -1,3 +1,5 @@
+
+
 export class Person {
   _name;
   _age;
@@ -62,25 +64,25 @@ export class Person {
   }
 
   classificateBmi() {
-    //pega o bmi
+    //Get BMI
     let bmiValue = this.bmi.toFixed(2);
     let classification = "";
 
     if (bmiValue < 18.5) {
       classification = "Underweight";
     } else if (bmiValue <= 24.9) {
-      classification = "Healthy Weight";
+      classification = "Normal Weight";
     } else if (bmiValue <= 29.9) {
       classification = "Overweight";
     } else if (bmiValue <= 34.9) {
-      classification = "Obesage grau I";
+      classification = "Obese class I";
     } else if (bmiValue <= 39.9) {
-      classification = "Obsesage grau II";
+      classification = "Obese class II";
     } else if (bmiValue >= 40) {
-      classification = "Obsesage grau III ou Mórbida";
+      classification = "Obese class III";
     } else {
-      classification = "weight inválido";
+      classification = "weight invalid";
     }
     return classification;
   }
-} //fim da class Person
+} //class Person End

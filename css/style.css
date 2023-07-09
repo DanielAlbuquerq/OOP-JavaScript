@@ -9,8 +9,8 @@
 
 /* Seletor Global */
 * {
-    margin: 0; /* margem */
-    padding: 0; /* espacamento */
+    margin: 0; /* margin */
+    padding: 0; /* spacing */
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
     font-size: 1rem;
@@ -55,7 +55,7 @@ h1::before {
     background: linear-gradient(45deg, #9fa8da, #1a237e);
 }
 
-/* formatar formulario */
+/* format form */
 form {
     width: 100%;
 }
@@ -115,7 +115,7 @@ input::placeholder:focus {
     color: red;
 }
 
-/* Botao */
+/* Button */
 
 .btn {
     font-size: 1rem;
@@ -182,7 +182,7 @@ th, tr, td {
     }   
 }
 
-/* Mensagens */
+/* Messages */
 
 .alert {
     width: 100%;
@@ -208,19 +208,19 @@ th, tr, td {
     background-color:#ff5722;
 }
 
-.formApagarEditar {
+.formDeleteEdit {
     background: #ccc;
     margin-top: 1rem;
     padding: 0.5rem;
     border-radius: 8px;
 }
 
-.formApagarEditar h2 {
+.formDeleteEdit h2 {
     text-align: center;
     margin: 1rem;
 }
 
-/* janela modal */
+/* modal window*/
 
 .modal{
     position: fixed;
@@ -297,8 +297,8 @@ th, tr, td {
     }
 }
 
-/* div da mensagem Modal */
-#menssageModal {
+/* Message Modal div */
+#messageModal {
     margin: 1rem;
     text-align: center;
 }

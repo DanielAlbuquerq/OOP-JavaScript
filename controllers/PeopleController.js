@@ -1,6 +1,9 @@
+
 import {Person} from "../models/Person.js"
-import { PeopleList } from "../models/PeopleList.js"
-import { PeopleView } from '../views/PeopleView.js'
+import {PeopleList} from "../models/PeopleList.js"
+import {PeopleView} from '../views/PeopleView.js'
+import {Message} from "../models/Message.js"
+import {PeopleRepository} from '../Repository/PeopleRepository.js'
 
 export class PersonController{
 
@@ -21,42 +24,48 @@ export class PersonController{
 
         // Repository
         this._peopleRepository = new PeopleRepository()
-        //console.log(this._peopleRepository)
-        let list = this._peopleRepository.ler()
+        console.log(this._peopleRepository)
+        let list = this._peopleRepository.read()
         console.log(list)
         ////////////////////////////////////////////////
 
         //create people list and people view 
         this._peopleList =  new PeopleList(list)
-        this._peopleView  =  new PeopleView(document.querySelector('#dados'))
+        this._peopleView  =  new PeopleView(document.querySelector('#data'))
         this._peopleView.update(this._peopleList)
       
         // message
-        //this._message = new Mensagem()
-        // this._messageView = new MessageView(document.querySelector('#mensagem'))
-        // this._messageView.update(this._message)
+        this._message = new Message()
+        this._messageView = new MessageView(document.querySelector('#message'))
+        this._messageView.update(this._message)
 
         // modal
         this._modal = new Modal()
-        this._modalView = new ModalView(document.querySelector('#mensagemModal'))
+        this._modalView = new ModalView(document.querySelector('#messageModal'))
         this._modalView.update(this._modal)
     }
 
-    //Add people
+    //Add person
     add(event){
         
         event.preventDefault()
 
         //create a person
-        this._createPerson()
-        console.log(this._createPerson())
+        const personAdd = this._createPerson()
+        this._peopleList.add(personAdd)
+        //Add to Repository
+        this._peopleRepository.create(personAdd)
+        this._peopleView.update(this._peopleList)
+        //Define and update the message
+        this._message.text="Successfully registered"
+        this._message.update(this._message) 
 
+        // Screen Update
     }
 
     //create Person
     _createPerson(){
         return new Person(
-
             this._inputName.value,
             this._inputAge.value,
             this._inputWeight.value,
@@ -70,8 +79,7 @@ export class PersonController{
         this._inputAge.value = ''
         this._inputWeight.value = ''
         this._inputHeight.value = ''
-
-        this._inputName.focusAge_inputAWeight_inputWHeight_inputHeight
+        this._inputName.focus()
     }
 
 }
