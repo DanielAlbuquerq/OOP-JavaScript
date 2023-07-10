@@ -8,13 +8,13 @@ export class PeopleList {
         this._people.push(person)
     }
 
-    // remove(id) {
-    //     this._people.splice(id, 1)
-    // }
+    remove(id) {
+        this._people.splice(id, 1)
+    }
 
-    // update(id, personUpdated) {
-    //     this._people[id] = personUpdated
-    // }
+    update(id, personUpdated) {
+        this._people[id] = personUpdated
+    }
 
     /* Defensive copying is a programming technique used 
     to protect data from being modified unexpectedly 

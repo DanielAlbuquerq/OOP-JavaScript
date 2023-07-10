@@ -1,4 +1,5 @@
 import { View } from '../views/View.js'
+import { Person } from '../models/Person.js'
 
 export class PeopleView extends View {
 
@@ -6,28 +7,28 @@ export class PeopleView extends View {
         super(element)
     }
 
-    _template(model) {
+    template(model) {
         return `
             <table>
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Nome</th> <th>Idade</th> <th>Peso</th> <th>Altura</th> <th>IMC</th> <th>Situação</th>
+                        <th>Name</th> <th>Age</th> <th>Weight</th> <th>Height</th> <th>BMI</th> <th>Classification</th>
                     </tr>
                 </thead>
                 <tbody>
-                    ${model.people.map((person, indice) => {
+                    ${model.people.map((person, index) => {
                     return `
                         <tr>
                             <td>
-                                ${indice}
+                                ${index}
                             </td>
                             <td>${person._name}</td>
                             <td>${person._age}</td>
                             <td>${person._weight}</td>
                             <td>${person._height}</td>
-                            <td>${person._bmi}</td>
-                            <td>${person.classificateBmi}</td>
+                            <td>${person._bmi.toFixed(2)}</td>
+                            <td>${person._classification}</td>
                         </tr>
                     `
                 }).join('')}
