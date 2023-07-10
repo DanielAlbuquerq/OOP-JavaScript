@@ -22,8 +22,8 @@ export class ModalHelper {
     }
 
     //methods, toggle for visibility
-    static  hiddeButtons(){
-        document.querySelector('#buttonsModal').classList.remove('show')
+    static hideButtons(){
+        document.querySelector('#buttonModal').classList.remove('show')
         document.querySelector('#buttonModal').classList.add('hide')
     }
 

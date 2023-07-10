@@ -10,7 +10,7 @@ export class PeopleRepository {
 
 
 
-    //CRUD - creat read update delete
+    //CRUD - creat - read - update - delete
 
 
     //Create = create
@@ -45,6 +45,5 @@ export class PeopleRepository {
     const dbPerson = this.read()
     return dbPerson[id]
     }
-
     
 }

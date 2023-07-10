@@ -8,7 +8,7 @@ export class PeopleList {
         this._people.push(person)
     }
 
-    remove(id) {
+    delete(id) {
         this._people.splice(id, 1)
     }
 

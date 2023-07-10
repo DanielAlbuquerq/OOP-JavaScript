@@ -1,18 +1,24 @@
 
 import {PersonController} from "../controllers/PeopleController.js"
 import {ModalHelper} from '../helpers/ModalHelpers.js'
+import { ModalView } from "./ModalView.js"
 
 const personController = new PersonController()
+
 // TO CONTROL FORM SUBMISSION AND DISPLAY IN THE TABLE
 const form = document.querySelector('#form')
 
 
 // EventListener Form
 form.addEventListener('submit', (event) => {    
+
     // add person 
     personController.add(event)
-    ModalHelper.hiddeButtons()
-    ModalHelper.modal('Registration', 'Person registered and updated')
+
+    ModalHelper.hideButtons()
+    ModalHelper.modal('Registered', 'Person registered')
+
+    personController._clearForm()
 
 })
 
@@ -26,7 +32,7 @@ formDeleteEdit.addEventListener('submit', (event) => {
 })
 
 btnDelete.addEventListener('click', () => {
-    //console.log('Delete')
+    
 
     let id = document.querySelector('#id').value
     console.log('Delete record ' + id)
@@ -70,7 +76,9 @@ btnEdit.addEventListener('click', () => {
     document.querySelector('#id').value = null
 
     let person = personController.searchById(id)
-    //console.log(person)
+
+    console.log(person)
+
     if(person) {
         let { _name, _age, _weight, _height } = person
         
