@@ -4,6 +4,10 @@ import {PeopleList} from "../models/PeopleList.js"
 import {PeopleView} from '../views/PeopleView.js'
 import {Message} from "../models/Message.js"
 import {PeopleRepository} from '../Repository/PeopleRepository.js'
+import { ModalHelper } from "../helpers/ModalHelpers.js"
+import {MessageView} from '../views/MessageView.js'
+import {Modal} from "../models/Modal.js"
+import {ModalView} from "../views/ModalView.js"
 
 export class PersonController{
 
@@ -13,6 +17,7 @@ export class PersonController{
     _inputWeight
     _inputHeight
     //methods
+    
 
     //constructor
     constructor(){

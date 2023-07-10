@@ -9,14 +9,13 @@ export class Person {
   _classification;
   static peopleTotal = 0;
 
-  new;
-
   constructor(name, age, weight, height) {
     this._name = name;
     this._age = age;
     this._weight = weight;
     this._height = height;
     this._bmi = this.weight / (this.height * this.height);
+   
 
     Person.peopleTotal += 1; //increments(adds one to)
     this._classification = this.classificateBmi();
@@ -47,6 +46,9 @@ export class Person {
   get peopleTotal() {
     return Person.peopleTotal;
   }
+  get classification(){
+    return this._classification
+  }
 
   set name(newname) {
     this._name = newname;
@@ -65,10 +67,11 @@ export class Person {
 
   classificateBmi() {
     //Get BMI
-    let bmiValue = this.bmi.toFixed(2);
+    let bmiValue = this.bmi;
     let classification = "";
+   
 
-    if (bmiValue < 18.5) {
+    if (bmiValue <= 18.5) {
       classification = "Underweight";
     } else if (bmiValue <= 24.9) {
       classification = "Normal Weight";
